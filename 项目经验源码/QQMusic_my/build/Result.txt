@@ -1,0 +1,40 @@
+[ 12%] Building CXX object CMakeFiles/QQMusicMy.dir/src/NetMgr/DataMgr.cpp.o
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp: In member function ‘virtual void DataMgr::OnPCMData(char*, int)’:
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:132:45: error: ‘m_mtxPcmData’ was not declared in this scope
+  std::lock_guard<std::recursive_mutex> lock(m_mtxPcmData);
+                                             ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:133:38: error: ‘len’ was not declared in this scope
+  int pos = m_PCMData.CopyData(pdata, len);
+                                      ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp: In member function ‘void DataMgr::SendDiscover()’:
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:232:21: error: ‘m_LocalDataPort’ was not declared in this scope
+  item["DataPort"] = m_LocalDataPort;
+                     ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:233:24: error: ‘m_LocalCmdPort’ was not declared in this scope
+  item["CommandPort"] = m_LocalCmdPort;
+                        ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:234:23: error: ‘m_LocalResultPort’ was not declared in this scope
+  item["ResultPort"] = m_LocalResultPort;
+                       ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp: In member function ‘void DataMgr::SendGetPCMData()’:
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:247:45: error: ‘m_mtxPcmData’ was not declared in this scope
+  std::lock_guard<std::recursive_mutex> lock(m_mtxPcmData);
+                                             ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:254:31: error: ‘PCM_BUFFER_SIZE’ was not declared in this scope
+    || m_PCMData.data.size() > PCM_BUFFER_SIZE )
+                               ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp: In member function ‘void DataMgr::SendGetPicData()’:
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:270:45: error: ‘m_mtxPcmData’ was not declared in this scope
+  std::lock_guard<std::recursive_mutex> lock(m_mtxPcmData);
+                                             ^
+In file included from /work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:2:0:
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp: In member function ‘void DataMgr::SendGetList()’:
+/work/work_g5r2/QQMusic_my/src/config.h:35:102: warning: format ‘%d’ expects argument of type ‘int’, but argument 7 has type ‘std::vector<stQQMusicItem>::size_type {aka long unsigned int}’ [-Wformat=]
+         printf("(%u|0x%08lX) [%s] INFO: " argfmt "\r\n", __PID__, __TID__, SVP_LOG_TAG, ##__VA_ARGS__);\
+                                                                                                      ^
+/work/work_g5r2/QQMusic_my/src/NetMgr/DataMgr.cpp:328:2: note: in expansion of macro ‘SVP_INFO’
+  SVP_INFO("SendGetList() %d, pageindex %d, itemsize %d, count %d",
+  ^
+make[2]: *** [CMakeFiles/QQMusicMy.dir/src/NetMgr/DataMgr.cpp.o] 错误 1
+make[1]: *** [CMakeFiles/QQMusicMy.dir/all] 错误 2
+make: *** [all] 错误 2
